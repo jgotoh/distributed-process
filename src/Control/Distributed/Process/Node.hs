@@ -770,6 +770,7 @@ nodeController = do
   node <- ask
   forever' $ do
     msg  <- liftIO $ readChan (localCtrlChan node)
+    liftIO $ print msg
 
     -- [Unified: Table 7, rule nc_forward]
     case destNid (ctrlMsgSignal msg) of
