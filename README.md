@@ -1,3 +1,14 @@
+# MonadFail
+
+This branch fixes an error while compiling distributed-process with GHC 8.8.3:
+
+```
+Could not deduce (MonadFail Process) arising from a use of ‘fail’
+```
+
+Fixed by applying the suggestion as seen here:
+https://github.com/haskell-distributed/distributed-process/issues/345
+
 # distributed-process
 [![travis](https://secure.travis-ci.org/haskell-distributed/distributed-process.png)](http://travis-ci.org/haskell-distributed/distributed-process)
 [![Release](https://img.shields.io/hackage/v/distributed-process.svg)](https://hackage.haskell.org/package/distributed-process)
