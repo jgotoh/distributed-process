@@ -185,6 +185,9 @@ instance Show ProcessId where
   show (ProcessId (NodeId addr) (LocalProcessId _ lid))
     = "pid://" ++ show addr ++ ":" ++ show lid
 
+instance MonadFail Process where
+  fail = error
+
 -- | Union of all kinds of identifiers
 data Identifier =
     NodeIdentifier !NodeId
